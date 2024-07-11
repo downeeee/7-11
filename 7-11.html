@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .first{color: blue;}
+    </style>
+
+    <script src="js/jquery-3.7.1.js"></script>
+    <script lang="java">
+        $(function(){
+            $('.first').text('one')
+            console.log('text :' ,txt)
+            
+            $(".first").css("color")
+            console.log("color :" , col)
+
+            var path= $('img').attr("src", "img/icon01.png")
+            console.log("path :" , path)
+
+            $(".list li").each(function(index){
+                console.log("index :" , index)
+                console.log("this :" , this)
+                console.log("this text :", $(this).text())
+                console.log("this data :", $(this).attr("data"))
+
+                $(this).text($(this).attr("data"))
+
+            })//list li each
+            //선택자
+            // $('h1')
+            //태그선택자
+        })//jq end
+    </script>
+</head>
+<body>
+    <div class="box">
+        <h1>each event</h1>
+
+        <ul  class="list">
+            <li class="first" data="1">하나</li>
+            <li data="2">둘</li>
+            <li data="3">셋</li>
+            <li data="4">넷</li>
+            <li data="5">다섯</li>
+        </ul>
+
+        <img src="img/normal_09.png" alt="">
+    </div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="js/jquery-3.7.1.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+
+    <script lang="java">
+        $(function(){
+
+            $(".color_picker div").each(function(i){
+                var bg = $(this).text()
+                console.log(bg)
+                $(this).css("background" , bg)
+            })//
+
+            $(".color_picker div").click(function(){
+                var bg= $(this).text()
+                $("body").animate({"background-color" : bg}, 500)
+            })// click
+
+
+            $(".color div").each(function(i){
+                var bg2 = $(this).attr("data")
+                $(this).css("background" , bg2)
+            })//
+
+            $(".color div").click(function(){
+                var bg2 = $(this).attr("data")
+                $("body").animate({"background-color" : bg2}, 500)
+            })
+        })//jq end
+    </script>
+
+    <style type="text/css">
+        body{background-color: bisque;padding: 500px;}
+        
+        .color_picker div{width: 80px; height: 30px; text-align: center; line-height: 30px;
+            display: inline-block; margin-right: 20px; cursor: pointer; border: 1px solid black;}
+
+        .color div{width: 80px; height: 30px; text-align: center;line-height: 30px; display: inline-block; margin-right: 20px;
+                    cursor: pointer; border: 1px rgb(0, 0, 0) solid;margin-top: 20px;}
+    </style>
+</head>
+<body>
+    <h2>배경 색 변경하기</h2>
+
+    <div class="color_picker">
+        <div>#f00</div>
+        <div>#005</div>
+        <div>#f0f</div>
+        <div>#05789a</div>
+        <div>#cc0</div>
+        <div>#cf0</div>
+    </div>
+
+    <div class="color">
+        <div data="red">빨강</div>
+        <div data="orange">주황</div>
+        <div data="yellow">노랑</div>
+        <div data="green">초록</div>
+        <div data="blue">파랑</div>
+        <div data="indigo">남색</div>
+        <div data="purple">보라</div>
+    </div>
+</body>
+</html>
